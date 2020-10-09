@@ -1,0 +1,10 @@
+jmeno = input("Zadej svoje jméno: ")
+prijmeni = input("Zadej své příjmení: ")
+vek = input("Zadej svůj věk: ")
+bydliste = input("Zadej název tvého města/vesnice: ")
+oblibene_cislo = input("Jaké je tvoje oblíbené číslo: ")
+barva = input("Jaká je tvoje oblíbená barva: ")
+
+print("Jmenuješ se " + jmeno + " " + prijmeni + ". Je ti " + vek + ". Bydlíš v " + bydliste + ". Tvoje oblíbené číslo je " + oblibene_cislo + " a barva je " + barva + ".")
+print("Já o tobě momentálně vím, dost soukromé informace, které prodám na Aliexpressu.")
+print("Příště nezadávej své osobní informace někam, kam nemáš.")

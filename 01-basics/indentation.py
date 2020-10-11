@@ -51,10 +51,14 @@ Do konzole vypište nejprve docstring vaší funkce a potom zavolejte funkci sam
 """
 
 def moje_funkce():
+    """
+    Tato funkce ukáže jestli je číslo menší než 7 nebo větší než 7.
+    """
     for i in range(1, 10):
         if i < 7:
             print("I je momentálně menší než 7.")
         else :
             print("I je větší než 7")
 
+print(moje_funkce.__doc__)
 moje_funkce()

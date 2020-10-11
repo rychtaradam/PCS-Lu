@@ -7,13 +7,6 @@ Moduly v Pythonu jsou uloženy v samostatných souborech s příponou .py.
 Definice uvnitř modulů mohou být importovány do jiných modulů nebo do interaktivní pythonovské konzoly.
 Připojení modulů provádíme klíčovým slovem import.
 '''
-from datetime import *
-
-import now
-from dateutil.parser import parse
-from dateutil.relativedelta import *
-from dateutil.easter import *
-from dateutil.rrule import rrule, YEARLY
 
 '''
 Příklad importu modulu math. V tomto případě můžeme pomocí tečkového operátoru využít všechny atributy a funkce,
@@ -82,4 +75,18 @@ Použijte vhodné moduly v Pythonu (včetně jejich případné instalace) k tom
 K řešení prvního úkolu je možné doporučit importovat interní modul datetime
 Řešení dalších dvou úkolů můžete odvodit z příkladů v dokumentaci k externímu modulu dateutil - viz https://pypi.org/project/python-dateutil/
 """
-print(datetime.now())
+
+import datetime
+from dateutil.easter import *
+from dateutil.relativedelta import *
+from dateutil.rrule import *
+
+year = 2020
+today = datetime.datetime.now()
+rok = rrule(YEARLY,dtstart=today,bymonth=12,bymonthday=24,byweekday=SU)[0].year
+print("Datum dnes: %s " %today)
+for i in range(0,5):
+    year += 1
+    rdelta = relativedelta(easter(year), today)
+    print(today + rdelta)
+print("Další Vánoce, které budou v neděli budou: %s " %rok)

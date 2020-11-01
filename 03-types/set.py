@@ -1,7 +1,7 @@
 '''
  Set je množina jedinečných hodnot
- A set is a collection which is unordered and unindexed.
- In Python sets are written with curly brackets.
+ Sada je kolekce, která je neuspořádaná a neindexovaná.
+ V Pythonu jsou sady psány složenými závorkami.
 '''
 my_set = {2, 3, 9, 7}
 print('Množina my_set: ', my_set)
@@ -18,28 +18,28 @@ chars = sorted(list('Hello world'))
 set_chars = set(chars)
 print(f'Uspořádaná množina (set) jedinečných hodnot: {set_chars}')
 
-# Once a set is created, you cannot change its items, but you can add new items. 
-# To add one item to a set use the add() method.
+# Jakmile je sada vytvořena, nemůžete měnit její položky, ale můžete přidávat nové položky.
+# Chcete-li přidat jednu položku do sady, použijte metodu add ().
 set_chars.add('V')
 
-# To add more than one item to a set use the update() method.
+# Chcete-li do sady přidat více než jednu položku, použijte metodu update ().
 set_chars.update('X', 'Y', 'Z')
 
-# To remove an item in a set, use the remove(), or the discard() method.
+# Chcete-li odebrat položku v sadě, použijte metodu remove () nebo discard ().
 set_chars.remove('H')
 print(f'Proměnná set_chars: {set_chars}')
 
-# The clear() method empties the set 
+# Metoda clear () vyprázdní sadu
 set_chars.clear()
 
-# The del keyword will delete the set completely:
+# Klíčové slovo del sadu zcela odstraní:
 del set_chars
 
 # Přístup k hodnotám množiny
-# You cannot access items in a set by referring to an index, since sets are unordered the items has no index.
+# K položkám v sadě nemůžete přistupovat odkazem na index, protože sady jsou neuspořádané, položky nemají index.
 # my_set[1]
 
-# But you can loop through the set items using a for loop, or ask if a specified value is present in a set, by using the in keyword.
+# Ale můžete procházet sady položek pomocí smyčky for, nebo se zeptat, jestli je zadaná hodnota v sadě, pomocí klíčového slova in.
 for x in my_set:
   print(x)
 

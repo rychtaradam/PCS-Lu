@@ -5,8 +5,8 @@ klíč (angl. key) a hodnotu (angl. value).
 Každému klíči je přiřazena jedna hodnota.
 '''
 
-# Collection which is unordered, changeable and indexed.
-# In Python dictionaries are written with curly brackets, and they have keys and values.
+# Sbírka, která je neuspořádaná, proměnlivá a indexovaná.
+# # V Pythonu jsou slovníky psány složenými závorkami a obsahují klíče a hodnoty.
 car = {
   'brand': 'Ford',
   'model': 'Mustang',
@@ -94,3 +94,34 @@ child3          Linus               2011
 ---------------------------------------------
 Počet záznamů: 3
 '''
+
+GTA5 = {
+  1: {
+    'jmeno': 'Michael De Santa',
+    'narozeni': 1965,
+    'nazivu': 'true',
+    'rodina': ('Amanda De Santa', 'zena'),
+
+  },
+  2: {
+    'jmeno': 'Trevor Philips  ',
+    'narozeni': 1966,
+    'nazivu': 'true',
+    'rodina': ('Mrs. Philips   ', 'matka'),
+  },
+  3: {
+    'jmeno': 'Franklin Clinton',
+    'narozeni': 1988,
+    'nazivu': 'true',
+    'rodina': ('Tavell Clinton ', 'bratranec'),
+  }
+}
+
+print('.....................................................................................')
+print('    id     Jméno                  Rok    Naživu    Rodina - Jméno      Rodina - vztah')
+a = 1
+for x in GTA5:
+  print(f'    {a}    {GTA5[a]["jmeno"]}         {GTA5[a]["narozeni"]}   {GTA5[a]["nazivu"]}      {GTA5[a]["rodina"][0]}     {GTA5[a]["rodina"][1]}')
+  a += 1
+print('.....................................................................................')
+#print(f'{GTA5["postava1"]["jmeno"]}')

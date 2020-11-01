@@ -56,11 +56,11 @@ print(f'\tVypíše každý druhý prvek ze seznamu letters: {letters[::2]}')
 # ??? 1. cvičení ???
 # Doplňte podle zadání chybějící u následujících tří výpisů
 print('\n1. Cvičení\n***********************************************************************************************')
-print(f'\tVypíše poslední 2 prvky ze seznamu numbers: ???')
-print(f'\tVypíše každý sudý prvek ze seznamu letters: ???')
-print(f'\tVypíše všechny hodnoty z mixed_list kromě dvou posledních: ???')
-print(f'\tVypíše hodnotu prvku name ze slovníku umístěného v seznamu mixed_list: ???')
-print(f'\tVypíše hodnotu předposledního čísla z listu numbers umístěného v seznamu mixed_list: ???')
+print(f'\tVypíše poslední 2 prvky ze seznamu numbers: {numbers[-2:]}')
+print(f'\tVypíše každý sudý prvek ze seznamu letters: {letters[1::2]}')
+print(f'\tVypíše všechny hodnoty z mixed_list kromě dvou posledních: {mixed_list[:-2]}')
+print(f'\tVypíše hodnotu prvku name ze slovníku umístěného v seznamu mixed_list: {mixed_list[4]["name"]}')
+print(f'\tVypíše hodnotu předposledního čísla z listu numbers umístěného v seznamu mixed_list: {mixed_list[3][1][-2]}')
 print('***********************************************************************************************\n')
 # ??? Konec 1. cvičení ???
 
@@ -285,16 +285,69 @@ print(f'\tSbalení seznamů do proměnné values: {values}\n')
 from random import randint
 
 print(f'\n*************************************\nCvičení 2\n*************************************')
+import string
+import random
+hundreds = []
+for x in range(1, 2001):
+    if x % 200 == 0:
+        hundreds.append(x)
+print(f'2.a) hundreds = {hundreds}')
 
+ascii = []
+for y in range(1, 51):
+    ascii.append(random.choice(string.ascii_uppercase))
+print(f'2.b) ascii = {ascii}')
 
+del hundreds[:3]
+del hundreds[-3:]
+print(f'2.c) hundreds = {hundreds}')
+
+unique = []
+for z in ascii:
+    if ascii.count(z) == 1:
+        unique.append(z)
+print(f'2.d) unique = {unique}')
+
+combine = list(zip(hundreds, ascii))
+print(f'2.e) unique = {combine}')
 
 # ??? 3. cvičení ???
 # a) Přidejte do listu persons ještě n-tice (tuples) dalších 2 žen a 2 mužů.
-# a) Použijte seznam (list) persons a do proměnné women z něj pomocí lambda výrazu i comprehensions vyhledejte všechny ženy.
+# b) Použijte seznam (list) persons a do proměnné women z něj pomocí lambda výrazu i comprehensions vyhledejte všechny ženy.
 # Seznam jmen žen poté vypište na samostatné řádky. Každý vypsaný řádek bude podtržen pomlčkami přesně podle délky jména.
-# b) Použijte seznam (list) persons a do proměnné ipeople z něj pomocí lambda výrazu i comprehensions vyhledejte všechny osoby
+# c) Použijte seznam (list) persons a do proměnné ipeople z něj pomocí lambda výrazu i comprehensions vyhledejte všechny osoby
 # obsahující ve jméně písmeno "i". Obsah listu ipeople poté převeďte do podoby řetězce, který bude odpovídat struktuře csv souboru.
 # Kromě jména, věku a pohlaví v něm budou vypsána i čísla indexů (jako 1. sloupec). Oddělovačem bude středník.
 # Záznamy budou seřazeny podle věku (sestupně).
 
 print(f'\n*************************************\nCvičení 3\n*************************************')
+
+persons.append(('Adam', 18, 'muž'))
+persons.append(('Filip', 17, 'muž'))
+persons.append(('Alexandra', 16, 'žena'))
+persons.append(('Eliška', 15, 'žena'))
+print(f'3.a) {persons}')
+
+women = []
+women = list(filter(lambda item: item[2] == 'žena', persons))
+women = [item for item in persons if item[2] == 'žena']
+p = 0
+print('3.b)')
+for i in women:
+    print(f'{women[p][0]}')
+    delka = len(women[p][0])
+    print('-' * delka)
+    p = p + 1
+
+ipeople = []
+z = 0
+for x in persons:
+    if persons[z][0].find('i') >= 0:
+        ipeople.append(persons[z])
+    elif persons[z][0].find('I') >= 0:
+        ipeople.append(persons[z])
+    z += 1
+z = 0
+for x in ipeople:
+    print(f'{z};{ipeople[z][0]};{ipeople[z][1]};{ipeople[z][2]}')
+    z+= 1
